@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Дякуємо за замовлення</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap">
+<style>
+:root{
+  --bg:#ffffff;--card:#faf6f1;--fg:#241d17;--muted:#7c7168;
+  --accent:#8e2a3f;--accent-2:#6b1c2d;--ok:#2e8b57;
+  --shadow:0 6px 24px rgba(40,30,20,.10);--btn-shadow:0 6px 18px rgba(107,28,45,.35);
+  --font:'Manrope',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;color-scheme:light;
+}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;background:var(--bg);color:var(--fg);font-family:var(--font);font-size:16px;line-height:1.5;display:flex;flex-direction:column}
+.hdr{background:linear-gradient(90deg,var(--accent) 0%,var(--accent-2) 100%);color:#fff;text-align:center;padding:18px 16px;font-size:22px;font-weight:800;text-transform:uppercase;letter-spacing:.02em}
+main{flex:1;display:flex;align-items:center;justify-content:center;padding:32px 16px}
+.card{background:var(--card);border-radius:16px;box-shadow:var(--shadow);padding:36px 22px 28px;max-width:520px;width:100%;text-align:center}
+.check{width:86px;height:86px;border-radius:50%;background:#fff;border:3px solid var(--ok);color:var(--ok);display:flex;align-items:center;justify-content:center;margin:0 auto 18px}
+.check svg{width:44px;height:44px}
+h1{font-size:28px;font-weight:800;margin:0 0 12px;line-height:1.2;text-wrap:balance}
+p{margin:0 0 10px;font-size:17px}
+p.m{color:var(--muted);font-size:15px}
+.btn{display:block;margin-top:22px;border:0;text-decoration:none;text-transform:uppercase;font-weight:800;font-size:17px;color:#fff;background:linear-gradient(90deg,var(--accent) 0%,var(--accent-2) 100%);border-radius:12px;padding:18px;box-shadow:var(--btn-shadow)}
+.btn:focus-visible{outline:3px solid rgba(142,42,63,.45);outline-offset:2px}
+footer{text-align:center;color:var(--muted);font-size:14px;padding:16px}
+</style>
+</head>
+<body>
+<div class="hdr">Костюм «The Best»</div>
+<main>
+  <div class="card">
+    <div class="check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg></div>
+    <h1>Дякуємо за замовлення!</h1>
+    <p>Ваша заявка прийнята. Найближчим часом наш оператор зателефонує вам, щоб підтвердити замовлення та уточнити деталі доставки.</p>
+    <p class="m">Будь ласка, тримайте телефон поруч.</p>
+    <a class="btn" href="../index.html">Повернутися на сайт</a>
+  </div>
+</main>
+<footer>Всі права захищено © <span id="y">2026</span></footer>
+<script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+</body>
+</html>
