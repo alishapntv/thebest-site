@@ -1,0 +1,808 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Костюм «The Best»</title>
+<meta name="description" content="Утеплений жіночий спортивний костюм «The Best» на флісі. Розміри 42–56, великі розміри. Знижка 43%, доставка по Україні, оплата при отриманні.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap">
+<style>
+/* Layout: one centred column (max 760px) like the reference, cards on a warm off-white, marsala gradient CTAs, sticky bottom CTA on phones. */
+:root{
+  --bg:#ffffff;
+  --card:#faf6f1;
+  --card-2:#f7f2ec;
+  --fg:#241d17;
+  --muted:#7c7168;
+  --line:#e9e0d6;
+  --accent:#8e2a3f;        /* марсала */
+  --accent-2:#6b1c2d;
+  --accent-soft:#f6e2e4;
+  --accent-text:#4a1a24;
+  --sale:#e8574c;
+  --star:#d9a441;
+  --ok:#2e8b57;
+  --shadow:0 6px 24px rgba(40,30,20,.10);
+  --btn-shadow:0 6px 18px rgba(107,28,45,.35);
+  --radius:16px;
+  --font:'Manrope',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--font);font-size:16px;line-height:1.5;padding-bottom:calc(96px + env(safe-area-inset-bottom,0px))}
+img{max-width:100%;display:block}
+h1,h2,h3{margin:0;text-wrap:balance;line-height:1.2}
+p{margin:0}
+button,input,select{font:inherit;color:inherit}
+a{color:inherit}
+.wrap{max-width:760px;margin:0 auto;padding-inline:16px}
+.section{padding-block:24px}
+.h2{font-size:24px;font-weight:800;text-align:center;margin-bottom:16px}
+
+/* Header */
+.hdr{background:linear-gradient(90deg,var(--accent) 0%,var(--accent-2) 100%);color:#fff;text-align:center;padding:18px 16px 16px}
+.hdr h1{font-size:22px;font-weight:800;text-transform:uppercase;letter-spacing:.02em}
+.hdr .sub{margin-top:6px;font-size:14px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;opacity:.92}
+
+/* Timer */
+.timer{background:var(--card-2);text-align:center;padding:16px 16px 14px}
+.timer .lbl{font-size:16px;font-weight:600;margin-bottom:6px}
+.timer .digits{display:flex;justify-content:center;align-items:flex-start;gap:6px}
+.timer .d{min-width:78px}
+.timer .d b{display:block;font-size:40px;font-weight:800;line-height:1.1;font-variant-numeric:tabular-nums}
+.timer .d span{display:block;font-size:14px;color:var(--muted)}
+.timer .sep{font-size:34px;font-weight:800;line-height:1.3;color:#c9bfb6}
+.banner{background:var(--accent-soft);color:var(--accent-text);text-align:center;font-size:15px;font-weight:800;text-transform:uppercase;padding:14px 16px;letter-spacing:.01em}
+
+/* Hero photo */
+/* Усі фото: пропорція 3:4 задається самому <img> (aspect-ratio + height:auto), контейнери без фіксованої висоти */
+.hero-photo{max-width:480px;margin:16px auto 0;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);background:var(--card)}
+.hero-photo img{display:block;width:100%;height:auto;aspect-ratio:3/4;object-fit:cover;transition:opacity .25s}
+.thumbs{display:flex;gap:8px;overflow-x:auto;max-width:480px;margin:0 auto;padding:12px 2px 6px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.thumbs::-webkit-scrollbar{display:none}
+.thumb{flex:0 0 auto;width:62px;border:0;padding:0;background:none;cursor:pointer;text-align:center}
+.thumb img{display:block;width:62px;height:auto;aspect-ratio:3/4;object-fit:cover;border-radius:10px;border:2px solid transparent;transition:border-color .2s}
+.thumb.active img{border-color:var(--accent)}
+.thumb span{display:block;font-size:11px;color:var(--muted);margin-top:4px;white-space:nowrap}
+
+/* Video: на всю ширину контейнера, однакові відступи зверху/знизу, без обрізання */
+.video-block{margin-block:22px}
+.video-card{position:relative;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);background:#1a1512}
+.video-card video{display:block;width:100%;height:auto;aspect-ratio:9/16;object-fit:contain;background:#1a1512}
+.video-card .play{position:absolute;inset:0;width:100%;height:100%;border:0;background:rgba(20,12,10,.18);cursor:pointer;display:flex;align-items:center;justify-content:center;padding:0;transition:background .2s}
+.video-card .play::before{content:"";width:78px;height:78px;border-radius:50%;background:linear-gradient(90deg,var(--accent) 0%,var(--accent-2) 100%);box-shadow:var(--btn-shadow);position:absolute}
+.video-card .play svg{position:relative;width:36px;height:36px;color:#fff;margin-left:4px}
+.video-card .play:hover{background:rgba(20,12,10,.28)}
+.video-card .play[hidden]{display:none}
+.video-card .sound{position:absolute;right:12px;bottom:12px;width:48px;height:48px;border-radius:50%;border:0;background:rgba(255,255,255,.92);box-shadow:0 2px 10px rgba(0,0,0,.18);cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--fg);padding:0}
+.video-card .sound svg{width:24px;height:24px}
+.video-card .sound .i-on{display:none}
+.video-card .sound[aria-pressed="true"] .i-on{display:block}
+.video-card .sound[aria-pressed="true"] .i-off{display:none}
+.video-card .sound:focus-visible{outline:3px solid rgba(142,42,63,.45);outline-offset:2px}
+.video-cap{margin-top:10px}
+
+/* Quick info: розміри + кольори (перший екран) */
+.quick{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:10px 26px}
+.q-item{display:flex;align-items:center;gap:10px;font-size:14px;font-weight:700;line-height:1.35}
+.q-item .ic{flex:0 0 38px;width:38px;height:38px;border-radius:50%;border:2px solid var(--accent);display:flex;align-items:center;justify-content:center;background:var(--card);color:var(--accent)}
+.q-item .ic svg{width:19px;height:19px}
+.q-item .k{color:var(--muted);font-weight:600}
+.q-item .v{font-variant-numeric:tabular-nums}
+.dot{display:inline-block;width:13px;height:13px;border-radius:50%;background:var(--c);box-shadow:inset 0 0 0 1px rgba(0,0,0,.12);vertical-align:-2px;margin-right:5px}
+.q-item .cl{white-space:nowrap;margin-left:4px}
+
+/* Perks: тканина / без передоплати / швидка доставка */
+.perks{margin-top:18px;background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:4px 18px;text-align:left}
+.perk{display:flex;align-items:flex-start;gap:14px;padding:14px 0;border-top:1px solid var(--line)}
+.perk:first-child{border-top:0}
+.perk .ic{flex:0 0 44px;width:44px;height:44px;border-radius:50%;border:2px solid var(--accent);display:flex;align-items:center;justify-content:center;background:#fff;color:var(--accent)}
+.perk .ic svg{width:22px;height:22px}
+.perk b{display:block;font-size:16px;font-weight:800;margin:2px 0 3px}
+.perk span{display:block;font-size:15px;color:#3f362f;line-height:1.45}
+
+/* Colour cards: окрема картка на кожен колір */
+.colors{display:grid;gap:18px}
+@media (min-width:640px){.colors{grid-template-columns:1fr 1fr}}
+.color-card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;padding-bottom:20px;text-align:center}
+.color-card img{display:block;width:100%;height:auto;aspect-ratio:3/4;object-fit:cover}
+.color-card h3{font-size:22px;font-weight:800;margin-top:16px;display:flex;align-items:center;justify-content:center;gap:9px}
+.color-card h3 .dot{margin:0;width:16px;height:16px}
+.color-card .p{color:var(--accent);font-weight:800;font-size:20px;margin:6px 0 12px}
+.sz{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;padding:0 16px 16px}
+.sz .lbl{width:100%;font-size:13px;color:var(--muted);font-weight:600}
+.chip{border:1.5px solid var(--line);background:#fff;border-radius:999px;padding:8px 14px;font-weight:700;font-size:14px;cursor:pointer;color:var(--fg);font-variant-numeric:tabular-nums;transition:border-color .15s,background .15s,color .15s}
+.chip:hover{border-color:var(--accent)}
+.chip[aria-pressed="true"]{border-color:var(--accent);background:var(--accent);color:#fff}
+.chip:focus-visible{outline:3px solid rgba(142,42,63,.45);outline-offset:2px}
+.color-card .btn{width:calc(100% - 48px);margin:0 auto;padding:18px 12px}
+
+/* Badges */
+.badges{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:14px}
+.badge{text-align:center;font-size:14px;font-weight:700;line-height:1.3}
+.badge .ic{width:62px;height:62px;border-radius:50%;border:2px solid var(--accent);display:flex;align-items:center;justify-content:center;margin:0 auto 8px;background:var(--card);color:var(--accent)}
+.badge .ic svg{width:28px;height:28px}
+
+/* Price card */
+.price-card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:22px 16px;text-align:center;margin-top:18px}
+.price-row{display:flex;justify-content:center;align-items:center;gap:12px}
+.old{color:var(--muted);text-decoration:line-through;font-size:20px;font-weight:600}
+.sale{background:var(--sale);color:#fff;border-radius:8px;padding:4px 12px;font-size:15px;font-weight:800}
+.price{font-size:38px;font-weight:800;margin-top:2px}
+.btn{display:flex;align-items:center;justify-content:center;width:100%;border:0;cursor:pointer;text-decoration:none;text-transform:uppercase;font-weight:800;font-size:19px;color:#fff;background:linear-gradient(90deg,var(--accent) 0%,var(--accent-2) 100%);border-radius:12px;padding:20px;box-shadow:var(--btn-shadow);transition:transform .15s,filter .15s;line-height:1.2;text-align:center}
+.btn:hover{filter:brightness(1.06)}
+.btn:active{transform:scale(.985)}
+.btn:focus-visible,.thumb:focus-visible,.arrow:focus-visible,input:focus-visible,select:focus-visible,.ft button:focus-visible,summary:focus-visible{outline:3px solid rgba(142,42,63,.45);outline-offset:2px}
+.price-card .btn{margin-top:16px}
+
+/* Description */
+.desc{text-align:center;padding-top:22px}
+.stock-sizes{color:var(--accent);font-weight:800;font-size:19px;margin-bottom:12px}
+.desc p{margin-bottom:14px;font-size:17px}
+.stock{color:var(--sale);font-weight:800;font-size:15px}
+
+/* Carousel */
+.carousel{position:relative;max-width:480px;margin:16px auto 0;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);background:var(--card)}
+.carousel .track{display:flex;transition:transform .35s ease}
+.carousel .track img{display:block;flex:0 0 100%;width:100%;height:auto;aspect-ratio:3/4;object-fit:cover}
+.arrow{position:absolute;top:50%;transform:translateY(-50%);width:48px;height:48px;border-radius:50%;border:0;background:rgba(255,255,255,.92);box-shadow:0 2px 10px rgba(0,0,0,.18);cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--fg)}
+.arrow svg{width:22px;height:22px}
+.arrow.prev{left:12px}.arrow.next{right:12px}
+.dots{display:flex;justify-content:center;gap:6px;margin-top:10px}
+.dots i{width:7px;height:7px;border-radius:50%;background:#d8cfc6}
+.dots i.on{background:var(--accent)}
+.cap{text-align:center;color:var(--muted);font-size:14px;margin-top:8px}
+
+/* Specs */
+.spec{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}
+.spec .row{display:grid;grid-template-columns:110px 1fr;gap:12px;padding:16px 20px;border-top:1px solid var(--line);font-size:17px}
+.spec .row:first-child{border-top:0}
+.spec .k{color:var(--muted)}
+.sizes{margin-top:16px;background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}
+.sizes .hd{background:linear-gradient(90deg,var(--accent) 0%,var(--accent-2) 100%);color:#fff;text-align:center;font-weight:800;text-transform:uppercase;letter-spacing:.06em;padding:14px;font-size:16px}
+.sizes .scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.sizes table{border-collapse:collapse;width:100%;min-width:520px;font-size:14px;font-variant-numeric:tabular-nums}
+.sizes th{font-size:11px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);font-weight:700;padding:12px 8px;background:#f2ece5;line-height:1.25;text-align:center}
+.sizes td{padding:12px 8px;text-align:center;border-top:1px solid var(--line);background:#fff}
+.sizes td:first-child,.sizes th:first-child{position:sticky;left:0;z-index:1}
+.sizes th:first-child{background:#f2ece5}
+.sizes td:first-child{background:#fff}
+.sizes td:first-child span{display:inline-block;border:1.5px solid var(--accent);color:var(--accent);border-radius:999px;padding:2px 10px;font-weight:800;font-size:13px;white-space:nowrap}
+.sizes .hint{text-align:center;color:var(--muted);font-size:13px;padding:10px 12px 12px}
+.section .btn.after{margin-top:16px}
+
+/* Reviews */
+.reviews{display:grid;gap:14px}
+.rev{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px 18px 16px}
+.rev .top{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap}
+.rev .nm{font-weight:800}
+.rev .dt{color:var(--muted);font-size:14px}
+.stars{color:var(--star);font-size:20px;letter-spacing:2px;margin:4px 0 8px;line-height:1}
+.stars .off{color:#d9d1c8}
+.rev .tx{font-size:17px}
+.reply{margin-top:12px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 14px;font-size:15px}
+.reply b{color:var(--accent)}
+
+/* Steps */
+.steps{display:grid;gap:12px}
+.step{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px;display:flex;align-items:center;gap:16px}
+.step .ic{flex:0 0 58px;width:58px;height:58px;border-radius:50%;border:2px solid var(--accent);display:flex;align-items:center;justify-content:center;color:var(--accent);background:#fff}
+.step .ic svg{width:26px;height:26px}
+.step b{display:block;font-size:19px;font-weight:800}
+.step span{color:var(--muted);font-size:16px}
+
+/* Info accordion */
+.info{display:grid;gap:10px;margin-top:18px}
+details{background:var(--card);border-radius:14px;box-shadow:var(--shadow);padding:0 18px}
+summary{cursor:pointer;list-style:none;font-weight:800;font-size:17px;padding:16px 0;display:flex;justify-content:space-between;align-items:center;gap:10px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"";width:10px;height:10px;border-right:2px solid var(--accent);border-bottom:2px solid var(--accent);transform:rotate(45deg);transition:transform .2s;flex:0 0 auto;margin-right:4px}
+details[open] summary::after{transform:rotate(225deg)}
+details .body{padding:0 0 16px;font-size:15px;color:#3f362f}
+details .body p{margin-bottom:8px}
+details .body ul{margin:0 0 8px;padding-left:20px}
+
+/* Form */
+.form-card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:26px 18px 22px;text-align:center}
+.form-card h2{font-size:26px;font-weight:800}
+.form-card .sub{color:var(--muted);margin:4px 0 18px}
+.field{text-align:left;margin-bottom:12px}
+.field input,.field select{width:100%;background:#fff;border:1.5px solid var(--line);border-radius:12px;padding:16px 14px;font-size:17px;appearance:none;-webkit-appearance:none}
+.field select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='9' viewBox='0 0 14 9'%3E%3Cpath d='M1 1l6 6 6-6' fill='none' stroke='%23241d17' stroke-width='2'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center;padding-right:40px}
+.field select:invalid,.field select.ph{color:#6e665f}
+.phone{display:flex;background:#fff;border:1.5px solid var(--line);border-radius:12px;overflow:hidden}
+.phone .pre{display:flex;align-items:center;gap:6px;padding:0 12px;background:#f3eee8;border-right:1.5px solid var(--line);font-weight:700;white-space:nowrap;font-size:16px}
+.phone .pre i{display:inline-block;width:20px;height:14px;border-radius:2px;background:linear-gradient(#005bbb 50%,#ffd500 50%)}
+.phone input{border:0;border-radius:0;flex:1;min-width:0}
+.field.err input,.field.err select,.field.err .phone{border-color:var(--sale)}
+.msg{display:none;color:var(--sale);font-size:13px;font-weight:600;margin:6px 2px 0}
+.field.err .msg{display:block}
+.form-card .btn{margin-top:6px;padding:20px}
+.form-card .btn[disabled]{opacity:.7;cursor:wait}
+.form-card .stock{display:block;margin-top:12px}
+.send-err{display:none;margin-top:12px;color:var(--sale);font-weight:700;font-size:15px}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.send-err.on{display:block}
+
+/* Footer */
+.ft{text-align:center;color:var(--muted);font-size:14px;padding:28px 16px 10px}
+.ft a,.ft button{text-decoration:underline;cursor:pointer;background:none;border:0;padding:0;font:inherit;color:inherit}
+.ft .copy{margin-top:8px}
+
+/* Sticky CTA */
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:50;background:#fff;box-shadow:0 -4px 20px rgba(0,0,0,.08);padding:12px 16px calc(12px + env(safe-area-inset-bottom,0px));transition:transform .3s}
+.sticky .btn{max-width:728px;margin:0 auto;padding:16px}
+.sticky.hide{transform:translateY(110%)}
+
+/* Policy modal */
+.modal{position:fixed;inset:0;z-index:100;background:rgba(20,12,10,.55);display:none;align-items:center;justify-content:center;padding:16px}
+.modal.on{display:flex}
+.modal .box{background:#fff;border-radius:16px;max-width:560px;width:100%;max-height:85vh;overflow:auto;padding:22px 20px}
+.modal h3{font-size:20px;margin-bottom:10px}
+.modal p{font-size:15px;margin-bottom:10px;color:#3f362f}
+.modal .btn{margin-top:8px;padding:14px;font-size:16px}
+
+@media (min-width:640px){
+  .hdr h1{font-size:28px}
+  .timer .d b{font-size:46px}
+  .badge{font-size:15px}
+  .desc p{font-size:18px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+
+
+<!-- 1. Шапка + таймер -->
+<header class="hdr">
+  <h1>Утеплений жіночий костюм «The Best»</h1>
+  <div class="sub">+ великі розміри</div>
+</header>
+<div class="timer" id="timer">
+  <div class="lbl">Ця пропозиція закінчиться через:</div>
+  <div class="digits" aria-live="off">
+    <div class="d"><b data-t="h">00</b><span>годин</span></div><div class="sep">:</div>
+    <div class="d"><b data-t="m">00</b><span>хвилин</span></div><div class="sep">:</div>
+    <div class="d"><b data-t="s">00</b><span>секунд</span></div>
+  </div>
+</div>
+<div class="banner">Встигни замовити до підвищення цін, замовляй вже сьогодні по знижці</div>
+
+<main class="wrap">
+
+  <!-- 2. Перший екран -->
+  <section class="section" id="top">
+    <div class="quick" aria-label="Розміри та кольори в наявності">
+      <div class="q-item">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="8" rx="1.5"/><path d="M7 8v3M11 8v4M15 8v3M19 8v4"/></svg></div>
+        <div><span class="k">Розміри:</span> <span class="v">42–44 · 46–48 · 50–52 · 54–56</span></div>
+      </div>
+      <div class="q-item">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a9 9 0 1 0 0 18h1.5a2 2 0 0 0 1.3-3.5 2 2 0 0 1 1.3-3.5H18a3 3 0 0 0 3-3 8 8 0 0 0-9-8z"/><circle cx="7.5" cy="12" r="1"/><circle cx="10" cy="7.5" r="1"/><circle cx="15" cy="7.5" r="1"/></svg></div>
+        <div><span class="k">Кольори:</span> <span class="cl"><i class="dot" style="--c:#7a2033"></i>Марсала</span> <span class="cl"><i class="dot" style="--c:#1b1b1b"></i>Чорний</span> <span class="cl"><i class="dot" style="--c:#4b2e22"></i>Шоколадний</span> <span class="cl"><i class="dot" style="--c:#9a9ea3"></i>Сірий</span></div>
+      </div>
+    </div>
+
+    <div class="hero-photo"><img id="heroImg" src="img/marsala-1.jpg" alt="Утеплений костюм The Best, колір марсала" width="1200" height="1600" fetchpriority="high"></div>
+    <div class="thumbs" id="thumbs" aria-label="Фото костюма"></div>
+
+    <div class="badges">
+      <div class="badge"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7z"/><circle cx="7" cy="18" r="1.8"/><circle cx="17.5" cy="18" r="1.8"/></svg></div>Доставка по Україні</div>
+      <div class="badge"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>Обмежена пропозиція</div>
+      <div class="badge"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M3 10h18M7 14h4"/></svg></div>Оплата при отриманні</div>
+    </div>
+
+    <div class="price-card">
+      <div class="price-row"><span class="old" data-old></span><span class="sale" data-sale></span></div>
+      <div class="price"><span data-price></span>&nbsp;грн</div>
+      <a class="btn js-order" href="#order">Замовити зі знижкою</a>
+    </div>
+
+    <!-- 3. Опис -->
+    <div class="desc">
+      <div class="stock-sizes">✚ Розміри 42–56 в наявності!</div>
+      <p>Утеплений спортивний костюм «The Best» — теплий і комфортний варіант на осінь та зиму: для прогулянок, поїздок, повсякденних справ і затишного відпочинку.</p>
+      <p>Виготовлений із м'якої тринитки на флісі: матеріал приємний до тіла, добре зберігає тепло та підходить для прохолодної погоди.</p>
+      <p>У комплекті — худі на блискавці з капюшоном та зручні джогери. Комфортна посадка і тепла флісова виворітка.</p>
+      <p>Кольори: марсала, чорний, шоколадний, сірий. Розміри 42–44, 46–48, 50–52, 54–56.</p>
+      <div class="stock">* Залишилось <span data-stock></span> шт по знижці</div>
+    </div>
+
+    <!-- Відео товару (файл: video/the-best.mp4, обкладинка: video/poster.jpg): автовідтворення без звуку, кнопка звуку -->
+    <div class="video-block">
+      <div class="video-card" id="videoCard">
+        <video id="promoVideo" autoplay muted loop playsinline preload="metadata" poster="video/poster.jpg" width="720" height="1280" aria-label="Відео: костюм The Best на моделях">
+          <source src="video/the-best.mp4" type="video/mp4">
+        </video>
+        <button class="play" type="button" id="playBtn" aria-label="Відтворити відео" hidden>
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>
+        </button>
+        <button class="sound" type="button" id="soundBtn" aria-label="Увімкнути звук" aria-pressed="false">
+          <svg class="i-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5L6 9H3v6h3l5 4z"/><path d="M22 9l-6 6M16 9l6 6"/></svg>
+          <svg class="i-on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5L6 9H3v6h3l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg>
+        </button>
+      </div>
+      <div class="cap video-cap">На відео: Валентина — зріст 163 см, розмір 42–44 · Марина — зріст 168 см, розмір 50–52</div>
+    </div>
+
+    <div class="perks" aria-label="Тканина, оплата та доставка">
+      <div class="perk">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l16 16M4 20L20 4"/><path d="M4 12h16M12 4v16"/></svg></div>
+        <div><b>Тканина</b><span>Модель виготовлена з трикотажу тринитка на флісі — щільної, зносостійкої тканини, яка чудово зберігає тепло, при цьому дихає та не деформується після прання.</span></div>
+      </div>
+      <div class="perk">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M3 10h18M7 14h4"/></svg></div>
+        <div><b>Без передоплати</b><span>Оплата при отриманні у відділенні пошти — ви платите лише тоді, коли костюм уже у вас.</span></div>
+      </div>
+      <div class="perk">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7z"/><circle cx="7" cy="18" r="1.8"/><circle cx="17.5" cy="18" r="1.8"/></svg></div>
+        <div><b>Швидка доставка</b><span>Відправляємо одразу після підтвердження замовлення оператором.</span></div>
+      </div>
+    </div>
+
+    <div class="carousel" id="carousel">
+      <div class="track" id="track"></div>
+      <button class="arrow prev" type="button" aria-label="Попереднє фото"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
+      <button class="arrow next" type="button" aria-label="Наступне фото"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></button>
+    </div>
+    <div class="dots" id="dots"></div>
+    <div class="cap" id="cap"></div>
+  </section>
+
+  <!-- 4. Кольори — окрема картка товару на кожен колір -->
+  <section class="section" id="colors">
+    <h2 class="h2">Оберіть колір</h2>
+    <div class="colors" id="colorCards"></div>
+  </section>
+
+  <!-- 5. Характеристики + розмірна таблиця -->
+  <section class="section" id="specs">
+    <h2 class="h2">Характеристики</h2>
+    <div class="spec">
+      <div class="row"><div class="k">Матеріал</div><div>Тринитка на флісі (тепла флісова виворітка)</div></div>
+      <div class="row"><div class="k">Комплект</div><div>Худі на блискавці з капюшоном + джогери</div></div>
+      <div class="row"><div class="k">Розміри</div><div>42–44, 46–48, 50–52, 54–56</div></div>
+      <div class="row"><div class="k">Кольори</div><div>Марсала, чорний, шоколадний, сірий</div></div>
+      <div class="row"><div class="k">Сезон</div><div>Осінь – зима</div></div>
+    </div>
+
+    <div class="sizes">
+      <div class="hd">Розмірна таблиця</div>
+      <div class="scroll">
+        <table>
+          <thead><tr>
+            <th>Розмір</th><th>Довжина<br>кофти</th><th>Рукав від<br>горловини</th><th>Напівобхват<br>грудей</th><th>Довжина<br>штанів</th><th>Напівобхват<br>талії</th><th>Напівобхват<br>стегон</th>
+          </tr></thead>
+          <tbody>
+            <tr><td><span>42–44</span></td><td>53 см</td><td>64 см</td><td>53 см</td><td>103 см</td><td>34 см</td><td>48 см</td></tr>
+            <tr><td><span>46–48</span></td><td>54 см</td><td>67 см</td><td>56 см</td><td>103 см</td><td>38 см</td><td>50 см</td></tr>
+            <tr><td><span>50–52</span></td><td>54 см</td><td>70 см</td><td>59 см</td><td>105 см</td><td>42 см</td><td>57 см</td></tr>
+            <tr><td><span>54–56</span></td><td>55 см</td><td>73 см</td><td>65 см</td><td>107 см</td><td>47 см</td><td>60 см</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="hint">Усі заміри в сантиметрах · таблицю можна прокрутити вбік</div>
+    </div>
+    <a class="btn after js-order" href="#order">Замовити по знижці</a>
+  </section>
+
+  <!-- 6. Відгуки -->
+  <section class="section" id="reviews">
+    <h2 class="h2">Відгуки наших покупців</h2>
+    <div class="reviews">
+      <div class="rev">
+        <div class="top"><span class="nm">Оксана Коваленко</span><span class="dt" data-date="yesterday">19:14</span></div>
+        <div class="stars" aria-label="5 з 5">★★★★★</div>
+        <p class="tx">Костюм дуже теплий і м'який, фліс приємний до тіла. Брала 50–52 — сів ідеально, ніде не тисне. Колір марсала точно як на фото.</p>
+        <div class="reply"><b>The Best:</b> Оксано, дякуємо за відгук! Раді, що костюм підійшов і гріє.</div>
+      </div>
+      <div class="rev">
+        <div class="top"><span class="nm">Марина Ткаченко</span><span class="dt" data-date="today">16:12</span></div>
+        <div class="stars" aria-label="5 з 5">★★★★★</div>
+        <p class="tx">Замовляла чорний на осінь — ношу вже другий тиждень майже щодня. Після прання не сів і не скатався. Доставили Новою поштою за два дні.</p>
+        <div class="reply"><b>The Best:</b> Марино, дякуємо! Носіть із задоволенням.</div>
+      </div>
+      <div class="rev">
+        <div class="top"><span class="nm">Наталія Шевчук</span><span class="dt" data-date="today">17:13</span></div>
+        <div class="stars" aria-label="4 з 5">★★★★<span class="off">★</span></div>
+        <p class="tx">Якісна тринитка, худі щільне, джогери зручні. Думала, що 54–56 буде замалий, але сів добре. Хотілося б ще бежевий колір.</p>
+        <div class="reply"><b>The Best:</b> Наталіє, дякуємо за детальний відгук! Побажання щодо кольору передали.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. Як замовити -->
+  <section class="section" id="how">
+    <h2 class="h2">Як замовити?</h2>
+    <div class="steps">
+      <div class="step"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4M10 12h5M10 16h5"/></svg></div><div><b>Крок 1</b><span>Заповніть форму замовлення</span></div></div>
+      <div class="step"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg></div><div><b>Крок 2</b><span>Дочекайтесь дзвінка оператора</span></div></div>
+      <div class="step"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-5 9 5v10H3z"/><path d="M3 9l9 5 9-5M12 14v5"/></svg></div><div><b>Крок 3</b><span>Оплатіть товар після отримання</span></div></div>
+    </div>
+
+    <div class="info">
+      <details>
+        <summary>Доставка та оплата</summary>
+        <div class="body">
+          <p><b>Доставка:</b></p>
+          <ul><li>Нова Пошта</li><li>Укрпошта</li></ul>
+          <p><b>Оплата:</b></p>
+          <ul>
+            <li>Післяплата (оплата при отриманні)</li>
+            <li>Онлайн-оплата карткою Visa / Mastercard — LiqPay</li>
+            <li>Оплата за реквізитами</li>
+            <li>Приват Банк — оплата на карту. Номер карти вам повідомить оператор на електронну пошту при виставленні рахунку за вашим замовленням.</li>
+          </ul>
+        </div>
+      </details>
+      <details>
+        <summary>Обмін та повернення</summary>
+        <div class="body">
+          <p>Якщо розмір не підходить вам або модель не подобається — ми приймаємо товар на обмін або повернення, але ви оплачуєте доставку.</p>
+          <p>Якщо повернення сталося з нашої провини (неправильна комплектація, заводський брак), ми без проблем зробимо обмін і відшкодуємо транспортні витрати — ми готові відповідати за якість своєї продукції.</p>
+          <p>Товар повинен бути упакованим і не мати слідів носіння і прання.</p>
+        </div>
+      </details>
+    </div>
+  </section>
+</main>
+
+<!-- Повтор таймера перед формою (як у референсі) -->
+<div class="timer" id="timer2">
+  <div class="lbl">Ця пропозиція закінчиться через:</div>
+  <div class="digits" aria-live="off">
+    <div class="d"><b data-t="h">00</b><span>годин</span></div><div class="sep">:</div>
+    <div class="d"><b data-t="m">00</b><span>хвилин</span></div><div class="sep">:</div>
+    <div class="d"><b data-t="s">00</b><span>секунд</span></div>
+  </div>
+</div>
+<div class="banner">Встигни замовити до підвищення цін, замовляй вже сьогодні по знижці</div>
+
+<div class="wrap">
+  <div class="badges" style="margin-top:20px">
+    <div class="badge"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7z"/><circle cx="7" cy="18" r="1.8"/><circle cx="17.5" cy="18" r="1.8"/></svg></div>Доставка по Україні</div>
+    <div class="badge"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>Обмежена пропозиція</div>
+    <div class="badge"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M3 10h18M7 14h4"/></svg></div>Оплата при отриманні</div>
+  </div>
+  <div class="price-card" style="padding-bottom:22px">
+    <div class="price-row"><span class="old" data-old></span><span class="sale" data-sale></span></div>
+    <div class="price"><span data-price></span>&nbsp;грн</div>
+  </div>
+
+  <!-- 8. Форма замовлення -->
+  <section class="section" id="order">
+    <form class="form-card" id="orderForm" novalidate>
+      <h2>Залиште заявку</h2>
+      <p class="sub">та отримайте консультацію</p>
+
+      <div class="field" id="fName">
+        <input id="name" name="name" type="text" autocomplete="name" placeholder="Введіть Ваше ім'я" maxlength="60" aria-label="Ваше ім'я">
+        <div class="msg">Вкажіть, будь ласка, ваше ім'я</div>
+      </div>
+
+      <div class="field" id="fPhone">
+        <div class="phone">
+          <span class="pre"><i aria-hidden="true"></i>+380</span>
+          <input id="phone" name="phone" type="tel" inputmode="numeric" autocomplete="tel-national" placeholder="Введіть Ваш телефон" maxlength="13" aria-label="Номер телефону без коду країни">
+        </div>
+        <div class="msg">Введіть коректний номер: 9 цифр після +380</div>
+      </div>
+
+      <div class="field" id="fColor">
+        <select id="color" name="color" class="ph" aria-label="Колір">
+          <option value="" selected disabled>Оберіть колір</option>
+          <option value="Марсала">Марсала</option>
+          <option value="Чорний">Чорний</option>
+          <option value="Шоколадний">Шоколадний</option>
+          <option value="Сірий">Сірий</option>
+        </select>
+        <div class="msg">Оберіть колір</div>
+      </div>
+
+      <div class="field" id="fSize">
+        <select id="size" name="size" class="ph" aria-label="Розмір">
+          <option value="" selected disabled>Оберіть розмір</option>
+          <option value="42–44">42–44</option>
+          <option value="46–48">46–48</option>
+          <option value="50–52">50–52</option>
+          <option value="54–56">54–56</option>
+        </select>
+        <div class="msg">Оберіть розмір</div>
+      </div>
+
+      <div class="hp" aria-hidden="true"><input id="website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
+      <button class="btn" type="submit" id="submitBtn">Замовити</button>
+      <div class="send-err" id="sendErr" role="alert">Не вдалося надіслати замовлення. Перевірте інтернет і спробуйте ще раз.</div>
+      <span class="stock">* Залишилось <span data-stock></span> шт по знижці</span>
+    </form>
+  </section>
+</div>
+
+<!-- 9. Підвал -->
+<footer class="ft">
+  <button type="button" class="pol" id="policyBtn">Політика конфіденційності</button>
+  <div class="copy">Всі права захищено © <span id="year">2026</span></div>
+</footer>
+
+<div class="sticky" id="sticky">
+  <a class="btn js-order" href="#order"><span>Замовити зі знижкою — <span data-price></span>&nbsp;грн</span></a>
+</div>
+
+<div class="modal" id="policy" role="dialog" aria-modal="true" aria-labelledby="polTitle">
+  <div class="box">
+    <h3 id="polTitle">Політика конфіденційності</h3>
+    <p>Залишаючи заявку на сайті, ви надаєте згоду на обробку персональних даних (ім'я та номер телефону) з метою оформлення та доставки замовлення.</p>
+    <p>Ми використовуємо ваші дані лише для зв'язку щодо замовлення і не передаємо їх третім особам, окрім служб доставки, необхідних для виконання замовлення.</p>
+    <p>Ви можете в будь-який момент попросити видалити ваші дані, звернувшись до оператора під час дзвінка.</p>
+    <button class="btn" type="button" id="policyClose">Зрозуміло</button>
+  </div>
+</div>
+
+<script>
+/* ============================================================
+   НАЛАШТУВАННЯ (див. README.txt)
+   Токен бота і chat_id тут НЕ зберігаються — вони лежать у змінних
+   середовища хостингу, а заявку відправляє серверна функція /api/order.
+   ============================================================ */
+const CONFIG = {
+  ORDER_ENDPOINT: '/api/order', // адреса серверної функції, що пересилає заявку в Telegram
+  PRICE: 1075,              // актуальна ціна, грн
+  OLD_PRICE: 1875,          // стара ціна, грн (для перекресленої ціни та % знижки)
+  STOCK: 9,                 // «Залишилось N шт по знижці»
+  TIMER_HOURS: 7,           // тривалість таймера акції, годин (після закінчення запускається знову)
+  THANK_YOU_URL: 'thank-you/index.html'  // адреса сторінки подяки
+};
+/* ============================================================ */
+
+const PHOTOS = [
+  {src:'img/marsala-1.jpg', sm:'img/marsala-1-sm.jpg', color:'Марсала'},
+  {src:'img/marsala-2.jpg', sm:'img/marsala-2-sm.jpg', color:'Марсала'},
+  {src:'img/marsala-3.jpg', sm:'img/marsala-3-sm.jpg', color:'Марсала'},
+  {src:'img/black-1.jpg',   sm:'img/black-1-sm.jpg',   color:'Чорний'},
+  {src:'img/black-2.jpg',   sm:'img/black-2-sm.jpg',   color:'Чорний'},
+  {src:'img/black-3.jpg',   sm:'img/black-3-sm.jpg',   color:'Чорний'},
+  {src:'img/choco-1.jpg',   sm:'img/choco-1-sm.jpg',   color:'Шоколадний'},
+  {src:'img/choco-2.jpg',   sm:'img/choco-2-sm.jpg',   color:'Шоколадний'},
+  {src:'img/choco-3.jpg',   sm:'img/choco-3-sm.jpg',   color:'Шоколадний'},
+  {src:'img/grey-1.jpg',    sm:'img/grey-1-sm.jpg',    color:'Сірий'},
+  {src:'img/grey-2.jpg',    sm:'img/grey-2-sm.jpg',    color:'Сірий'},
+  {src:'img/grey-3.jpg',    sm:'img/grey-3-sm.jpg',    color:'Сірий'}
+];
+const $ = (s, r=document) => r.querySelector(s);
+const $$ = (s, r=document) => [...r.querySelectorAll(s)];
+const fmt = n => String(n).replace(/\B(?=(\d{3})+(?!\d))/g, '\u00A0');
+
+/* Ціни */
+const discount = Math.round((1 - CONFIG.PRICE / CONFIG.OLD_PRICE) * 100);
+$$('[data-price]').forEach(e => e.textContent = fmt(CONFIG.PRICE));
+$$('[data-old]').forEach(e => e.textContent = fmt(CONFIG.OLD_PRICE) + ' грн');
+$$('[data-sale]').forEach(e => e.textContent = '−' + discount + '%');
+$$('[data-stock]').forEach(e => e.textContent = CONFIG.STOCK);
+$('#year').textContent = new Date().getFullYear();
+
+/* Таймер (циклічний, реальний час) */
+(function timer(){
+  const KEY = 'tb_timer_start';
+  const dur = CONFIG.TIMER_HOURS * 3600 * 1000;
+  let start = 0;
+  try { start = +localStorage.getItem(KEY) || 0; } catch(e){}
+  const now = Date.now();
+  if (!start || now - start > dur) { start = now; try { localStorage.setItem(KEY, start); } catch(e){} }
+  const els = { h: $$('[data-t="h"]'), m: $$('[data-t="m"]'), s: $$('[data-t="s"]') };
+  const pad = n => String(n).padStart(2, '0');
+  function tick(){
+    let left = dur - (Date.now() - start);
+    if (left <= 0) { start = Date.now(); try { localStorage.setItem(KEY, start); } catch(e){} left = dur; }
+    const sec = Math.floor(left / 1000);
+    const h = Math.floor(sec / 3600), m = Math.floor(sec % 3600 / 60), s = sec % 60;
+    els.h.forEach(e => e.textContent = pad(h));
+    els.m.forEach(e => e.textContent = pad(m));
+    els.s.forEach(e => e.textContent = pad(s));
+  }
+  tick(); setInterval(tick, 1000);
+})();
+
+/* Головне фото: мініатюри + свайп вліво/вправо */
+const hero = $('#heroImg');
+const thumbs = $('#thumbs');
+let heroIdx = 0;
+function showHero(n){
+  heroIdx = (n + PHOTOS.length) % PHOTOS.length;
+  const p = PHOTOS[heroIdx];
+  hero.style.opacity = '0';
+  const im = new Image(); im.src = p.src;
+  im.onload = () => { hero.src = p.src; hero.alt = 'Утеплений костюм The Best, колір ' + p.color.toLowerCase(); hero.style.opacity = '1'; };
+  $$('.thumb', thumbs).forEach((t, k) => t.classList.toggle('active', k === heroIdx));
+  const active = $$('.thumb', thumbs)[heroIdx];
+  if (active && active.scrollIntoView) active.scrollIntoView({ block: 'nearest', inline: 'center', behavior: 'smooth' });
+}
+PHOTOS.forEach((p, i) => {
+  const b = document.createElement('button');
+  b.type = 'button'; b.className = 'thumb' + (i === 0 ? ' active' : '');
+  b.innerHTML = `<img src="${p.sm}" alt="${p.color}" loading="lazy" width="62" height="82"><span>${p.color}</span>`;
+  b.addEventListener('click', () => showHero(i));
+  thumbs.appendChild(b);
+});
+(function heroSwipe(){
+  const box = $('.hero-photo');
+  let x0 = null, y0 = null;
+  box.addEventListener('touchstart', e => { x0 = e.touches[0].clientX; y0 = e.touches[0].clientY; }, {passive:true});
+  box.addEventListener('touchend', e => {
+    if (x0 === null) return;
+    const dx = e.changedTouches[0].clientX - x0, dy = e.changedTouches[0].clientY - y0; x0 = y0 = null;
+    if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) showHero(dx < 0 ? heroIdx + 1 : heroIdx - 1);
+  }, {passive:true});
+})();
+
+/* Карусель */
+(function carousel(){
+  const track = $('#track'), dots = $('#dots'), cap = $('#cap');
+  PHOTOS.forEach((p, i) => {
+    const im = document.createElement('img');
+    im.src = p.src; im.alt = 'Костюм The Best, колір ' + p.color.toLowerCase(); im.loading = 'lazy'; im.width = 1200; im.height = 1600;
+    track.appendChild(im);
+    const d = document.createElement('i'); if (i === 0) d.className = 'on'; dots.appendChild(d);
+  });
+  let i = 0;
+  const show = n => {
+    i = (n + PHOTOS.length) % PHOTOS.length;
+    track.style.transform = `translateX(-${i * 100}%)`;
+    $$('i', dots).forEach((d, k) => d.classList.toggle('on', k === i));
+    cap.textContent = `${PHOTOS[i].color} · фото ${i + 1} з ${PHOTOS.length}`;
+  };
+  show(0);
+  $('.arrow.prev').addEventListener('click', () => show(i - 1));
+  $('.arrow.next').addEventListener('click', () => show(i + 1));
+  let x0 = null;
+  const c = $('#carousel');
+  c.addEventListener('touchstart', e => { x0 = e.touches[0].clientX; }, {passive:true});
+  c.addEventListener('touchend', e => {
+    if (x0 === null) return;
+    const dx = e.changedTouches[0].clientX - x0; x0 = null;
+    if (Math.abs(dx) > 40) show(dx < 0 ? i + 1 : i - 1);
+  }, {passive:true});
+})();
+
+const colorSel = $('#color');
+const sizeSel = $('#size');
+
+/* Картки кольорів: окрема картка товару на кожен колір, розмір можна обрати в картці */
+const COLORS = [
+  {name:'Марсала',    hex:'#7a2033', img:'img/marsala-2.jpg'},
+  {name:'Чорний',     hex:'#1b1b1b', img:'img/black-1.jpg'},
+  {name:'Шоколадний', hex:'#4b2e22', img:'img/choco-1.jpg'},
+  {name:'Сірий',      hex:'#9a9ea3', img:'img/grey-1.jpg'}
+];
+const SIZES = ['42–44', '46–48', '50–52', '54–56'];
+const cards = $('#colorCards');
+COLORS.forEach(c => {
+  const el = document.createElement('div');
+  el.className = 'color-card';
+  el.innerHTML = `<img src="${c.img}" alt="Костюм The Best, колір ${c.name.toLowerCase()}" loading="lazy" width="1200" height="1600">
+    <h3><i class="dot" style="--c:${c.hex}"></i>${c.name}</h3>
+    <div class="p">${fmt(CONFIG.PRICE)} грн</div>
+    <div class="sz" role="group" aria-label="Розмір — ${c.name}"><span class="lbl">Оберіть розмір:</span>${SIZES.map(s => `<button type="button" class="chip" aria-pressed="false" data-size="${s}">${s}</button>`).join('')}</div>
+    <a class="btn js-order" href="#order" data-color="${c.name}">Замовити зі знижкою</a>`;
+  cards.appendChild(el);
+});
+/* Вибір розміру в картці одразу підставляється у форму (і підсвічується лише в цій картці) */
+cards.addEventListener('click', e => {
+  const chip = e.target.closest('.chip');
+  if (!chip) return;
+  const wasOn = chip.getAttribute('aria-pressed') === 'true';
+  $$('.chip', cards).forEach(x => x.setAttribute('aria-pressed', 'false'));
+  if (wasOn) { sizeSel.value = ''; sizeSel.classList.add('ph'); return; }
+  chip.setAttribute('aria-pressed', 'true');
+  sizeSel.value = chip.dataset.size; sizeSel.classList.remove('ph'); $('#fSize').classList.remove('err');
+});
+
+/* Плавний скрол до форми (+ колір із картки одразу обраний у формі) */
+document.addEventListener('click', e => {
+  const a = e.target.closest('.js-order');
+  if (!a) return;
+  e.preventDefault();
+  if (a.dataset.color) { colorSel.value = a.dataset.color; colorSel.classList.remove('ph'); $('#fColor').classList.remove('err'); }
+  const form = $('#order');
+  form.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  setTimeout(() => $('#name').focus({ preventScroll: true }), 700);
+});
+
+/* Липка кнопка: ховаємо, коли форма на екрані */
+(function sticky(){
+  const bar = $('#sticky'), form = $('#order');
+  if (!('IntersectionObserver' in window)) return;
+  new IntersectionObserver(([en]) => bar.classList.toggle('hide', en.isIntersecting), { threshold: 0.15 }).observe(form);
+})();
+
+/* Дати відгуків */
+$$('[data-date]').forEach(e => { e.textContent = (e.dataset.date === 'today' ? 'сьогодні' : 'вчора') + ', ' + e.textContent; });
+
+/* Політика конфіденційності */
+const modal = $('#policy');
+$('#policyBtn').addEventListener('click', () => modal.classList.add('on'));
+$('#policyClose').addEventListener('click', () => modal.classList.remove('on'));
+modal.addEventListener('click', e => { if (e.target === modal) modal.classList.remove('on'); });
+
+/* Телефон: лише цифри, формат XX XXX XX XX */
+const phone = $('#phone');
+function phoneDigits(v){
+  let d = v.replace(/\D/g, '');
+  if (d.startsWith('380')) d = d.slice(3);
+  else if (d.startsWith('0') && d.length >= 10) d = d.slice(1);
+  return d.slice(0, 9);
+}
+phone.addEventListener('input', () => {
+  const d = phoneDigits(phone.value);
+  phone.value = d.replace(/(\d{2})(\d{0,3})(\d{0,2})(\d{0,2})/, (m, a, b, c, e) => [a, b, c, e].filter(Boolean).join(' '));
+});
+[colorSel, sizeSel].forEach(s => s.addEventListener('change', () => s.classList.toggle('ph', !s.value)));
+$$('.field input, .field select').forEach(el => el.addEventListener('input', () => el.closest('.field').classList.remove('err')));
+
+/* Відправка замовлення */
+function validate(){
+  let ok = true;
+  const set = (id, bad) => { $('#' + id).classList.toggle('err', bad); if (bad) ok = false; };
+  const name = $('#name').value.trim();
+  set('fName', name.length < 2);
+  const d = phoneDigits(phone.value);
+  set('fPhone', !(d.length === 9 && /^[3-9]/.test(d)));
+  set('fColor', !colorSel.value);
+  set('fSize', !$('#size').value);
+  if (!ok) { const first = $('.field.err input, .field.err select'); if (first) first.focus(); }
+  return ok;
+}
+/* Заявка йде на серверну функцію (/api/order), яка пересилає її в Telegram.
+   Токен бота в коді сторінки відсутній. */
+async function sendOrder(order){
+  const ctrl = new AbortController();
+  const t = setTimeout(() => ctrl.abort(), 15000);
+  try {
+    const r = await fetch(CONFIG.ORDER_ENDPOINT, {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(order), signal: ctrl.signal
+    });
+    const j = await r.json().catch(() => ({}));
+    return r.ok && j.ok === true;
+  } finally { clearTimeout(t); }
+}
+const IS_PREVIEW = /claudeusercontent\.com$|^claude\.ai$/.test(location.hostname);
+$('#orderForm').addEventListener('submit', async e => {
+  e.preventDefault();
+  const err = $('#sendErr'); err.classList.remove('on');
+  if (!validate()) return;
+  if ($('#website').value) return; // пастка для ботів
+  const btn = $('#submitBtn'); btn.disabled = true; btn.textContent = 'Відправляємо…';
+  const order = { name: $('#name').value.trim(), phone: phoneDigits(phone.value), color: colorSel.value, size: $('#size').value, price: CONFIG.PRICE };
+  let ok = false;
+  try { ok = await sendOrder(order); } catch (e2) { console.error(e2); }
+  if (ok) {
+    window.location.href = CONFIG.THANK_YOU_URL;
+    return;
+  }
+  err.textContent = IS_PREVIEW
+    ? 'Це попередній перегляд сайту: замовлення приймаються лише на основному сайті після розміщення на хостингу.'
+    : 'Не вдалося надіслати замовлення. Перевірте інтернет і спробуйте ще раз.';
+  err.classList.add('on');
+  btn.disabled = false; btn.textContent = 'Замовити';
+});
+
+/* Відео: автовідтворення без звуку (muted, loop, playsinline), кнопка звуку; тап по відео — пауза/пуск.
+   Якщо браузер заборонив автозапуск (режим економії) — показуємо кнопку play. */
+(function video(){
+  const card = $('#videoCard'), v = $('#promoVideo'), play = $('#playBtn'), snd = $('#soundBtn');
+  if (!card || !v) return;
+  v.muted = true;
+  const tryPlay = () => v.play().then(() => { play.hidden = true; }).catch(() => { play.hidden = false; });
+  tryPlay();
+  play.addEventListener('click', e => { e.stopPropagation(); tryPlay(); });
+  snd.addEventListener('click', e => {
+    e.stopPropagation();
+    v.muted = !v.muted;
+    snd.setAttribute('aria-pressed', v.muted ? 'false' : 'true');
+    snd.setAttribute('aria-label', v.muted ? 'Увімкнути звук' : 'Вимкнути звук');
+    if (v.paused) tryPlay();
+  });
+  v.addEventListener('click', () => { if (v.paused) tryPlay(); else { v.pause(); play.hidden = false; } });
+  v.addEventListener('play', () => { play.hidden = true; });
+})();
+</script>
+
+</body></html>
