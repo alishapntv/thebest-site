@@ -1,35 +1,11 @@
-<!DOCTYPE html>
-<html lang="uk">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-
-<!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1597916768202682');
-fbq('track', 'PageView');
-</script>
-<noscript>
-<img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1597916768202682&ev=PageView&noscript=1"/>
-</noscript>
-<!-- End Meta Pixel Code -->
-
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
 <title>Костюм «The Best»</title>
-<meta name="description" content="Утеплений жіночий спортивний костюм «The Best» на флісі. Розміри 42-56, великі розміри. Знижка 43%, доставка по Україні, оплата при отриманні.">
-
+<meta name="description" content="Утеплений жіночий спортивний костюм «The Best» на флісі. Розміри 42–56, великі розміри. Знижка 43%, доставка по Україні, оплата при отриманні.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap">
-
 <style>
+/* Layout: one centred column (max 760px) like the reference, cards on a warm off-white, marsala gradient CTAs, sticky bottom CTA on phones. */
 :root{
   --bg:#ffffff;
   --card:#faf6f1;
@@ -37,16 +13,17 @@ fbq('track', 'PageView');
   --fg:#241d17;
   --muted:#7c7168;
   --line:#e9e0d6;
-  --accent:#8e2e3f;
+  --accent:#8e2a3f;        /* марсала */
   --accent-2:#6b1c2d;
-  --accent-soft:#f4e1d4;
-  --accent-text:#4a1a23;
-  --sale:#d8574c;
-  --star:#f06441;
+  --accent-soft:#f6e2e4;
+  --accent-text:#4a1a24;
+  --sale:#e8574c;
+  --star:#d9a441;
+  --ok:#2e8b57;
+  --shadow:0 6px 24px rgba(40,30,20,.10);
+  --btn-shadow:0 6px 18px rgba(107,28,45,.35);
   --radius:16px;
-  --shadow:0 4px 20px rgba(40,36,28,.10);
-  --btn-shadow:0 6px 16px rgba(107,28,45,.25);
-  --font:'Manrope',system-ui,-apple-system,sans-serif;
+  --font:'Manrope',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
   color-scheme:light;
 }
 *{box-sizing:border-box}
@@ -77,6 +54,7 @@ a{color:inherit}
 .banner{background:var(--accent-soft);color:var(--accent-text);text-align:center;font-size:15px;font-weight:800;text-transform:uppercase;padding:14px 16px;letter-spacing:.01em}
 
 /* Hero photo */
+/* Усі фото: пропорція 3:4 задається самому <img> (aspect-ratio + height:auto), контейнери без фіксованої висоти */
 .hero-photo{max-width:480px;margin:16px auto 0;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);background:var(--card)}
 .hero-photo img{display:block;width:100%;height:auto;aspect-ratio:3/4;object-fit:cover;transition:opacity .25s}
 .thumbs{display:flex;gap:8px;overflow-x:auto;max-width:480px;margin:0 auto;padding:12px 2px 6px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
@@ -86,7 +64,7 @@ a{color:inherit}
 .thumb.active img{border-color:var(--accent)}
 .thumb span{display:block;font-size:11px;color:var(--muted);margin-top:4px;white-space:nowrap}
 
-/* Video */
+/* Video: на всю ширину контейнера, однакові відступи зверху/знизу, без обрізання */
 .video-block{margin-block:22px}
 .video-card{position:relative;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);background:#1a1512}
 .video-card video{display:block;width:100%;height:auto;aspect-ratio:9/16;object-fit:contain;background:#1a1512}
@@ -103,7 +81,7 @@ a{color:inherit}
 .video-card .sound:focus-visible{outline:3px solid rgba(142,42,63,.45);outline-offset:2px}
 .video-cap{margin-top:10px}
 
-/* Quick info */
+/* Quick info: розміри + кольори (перший екран) */
 .quick{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:10px 26px}
 .q-item{display:flex;align-items:center;gap:10px;font-size:14px;font-weight:700;line-height:1.35}
 .q-item .ic{flex:0 0 38px;width:38px;height:38px;border-radius:50%;border:2px solid var(--accent);display:flex;align-items:center;justify-content:center;background:var(--card);color:var(--accent)}
@@ -113,7 +91,7 @@ a{color:inherit}
 .dot{display:inline-block;width:13px;height:13px;border-radius:50%;background:var(--c);box-shadow:inset 0 0 0 1px rgba(0,0,0,.12);vertical-align:-2px;margin-right:5px}
 .q-item .cl{white-space:nowrap;margin-left:4px}
 
-/* Perks */
+/* Perks: тканина / без передоплати / швидка доставка */
 .perks{margin-top:18px;background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:4px 18px;text-align:left}
 .perk{display:flex;align-items:flex-start;gap:14px;padding:14px 0;border-top:1px solid var(--line)}
 .perk:first-child{border-top:0}
@@ -122,7 +100,7 @@ a{color:inherit}
 .perk b{display:block;font-size:16px;font-weight:800;margin:2px 0 3px}
 .perk span{display:block;font-size:15px;color:#3f362f;line-height:1.45}
 
-/* Colour cards */
+/* Colour cards: окрема картка на кожен колір */
 .colors{display:grid;gap:18px}
 @media (min-width:640px){.colors{grid-template-columns:1fr 1fr}}
 .color-card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;padding-bottom:20px;text-align:center}
@@ -271,8 +249,7 @@ details .body ul{margin:0 0 8px;padding-left:20px}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 </style>
-</head>
-<body>
+
 
 <!-- 1. Шапка + таймер -->
 <header class="hdr">
@@ -329,11 +306,11 @@ details .body ul{margin:0 0 8px;padding-left:20px}
       <div class="stock">* Залишилось <span data-stock></span> шт по знижці</div>
     </div>
 
-    <!-- Відео товару -->
+    <!-- Відео товару (файл: video/the-best.mp4, обкладинка: video/poster.jpg): автовідтворення без звуку, кнопка звуку -->
     <div class="video-block">
       <div class="video-card" id="videoCard">
         <video id="promoVideo" autoplay muted loop playsinline preload="metadata" poster="video/poster.jpg" width="720" height="1280" aria-label="Відео: костюм The Best на моделях">
-          <source src="video/product.mp4" type="video/mp4">
+          <source src="video/the-best.mp4" type="video/mp4">
         </video>
         <button class="play" type="button" id="playBtn" aria-label="Відтворити відео" hidden>
           <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>
@@ -370,7 +347,7 @@ details .body ul{margin:0 0 8px;padding-left:20px}
     <div class="cap" id="cap"></div>
   </section>
 
-  <!-- 4. Кольори -->
+  <!-- 4. Кольори — окрема картка товару на кожен колір -->
   <section class="section" id="colors">
     <h2 class="h2">Оберіть колір</h2>
     <div class="colors" id="colorCards"></div>
@@ -468,7 +445,7 @@ details .body ul{margin:0 0 8px;padding-left:20px}
   </section>
 </main>
 
-<!-- Повтор таймера перед формою -->
+<!-- Повтор таймера перед формою (як у референсі) -->
 <div class="timer" id="timer2">
   <div class="lbl">Ця пропозиція закінчиться через:</div>
   <div class="digits" aria-live="off">
@@ -560,14 +537,20 @@ details .body ul{margin:0 0 8px;padding-left:20px}
 </div>
 
 <script>
+/* ============================================================
+   НАЛАШТУВАННЯ (див. README.txt)
+   Токен бота і chat_id тут НЕ зберігаються — вони лежать у змінних
+   середовища хостингу, а заявку відправляє серверна функція /api/order.
+   ============================================================ */
 const CONFIG = {
-  ORDER_ENDPOINT: '/api/order',
-  PRICE: 1075,
-  OLD_PRICE: 1875,
-  STOCK: 9,
-  TIMER_HOURS: 7,
-  THANK_YOU_URL: 'thank-you/index.html'
+  ORDER_ENDPOINT: '/api/order', // адреса серверної функції, що пересилає заявку в Telegram
+  PRICE: 1075,              // актуальна ціна, грн
+  OLD_PRICE: 1875,          // стара ціна, грн (для перекресленої ціни та % знижки)
+  STOCK: 9,                 // «Залишилось N шт по знижці»
+  TIMER_HOURS: 7,           // тривалість таймера акції, годин (після закінчення запускається знову)
+  THANK_YOU_URL: 'thank-you/index.html'  // адреса сторінки подяки
 };
+/* ============================================================ */
 
 const PHOTOS = [
   {src:'img/marsala-1.jpg', sm:'img/marsala-1-sm.jpg', color:'Марсала'},
@@ -595,7 +578,7 @@ $$('[data-sale]').forEach(e => e.textContent = '−' + discount + '%');
 $$('[data-stock]').forEach(e => e.textContent = CONFIG.STOCK);
 $('#year').textContent = new Date().getFullYear();
 
-/* Таймер */
+/* Таймер (циклічний, реальний час) */
 (function timer(){
   const KEY = 'tb_timer_start';
   const dur = CONFIG.TIMER_HOURS * 3600 * 1000;
@@ -617,7 +600,7 @@ $('#year').textContent = new Date().getFullYear();
   tick(); setInterval(tick, 1000);
 })();
 
-/* Головне фото */
+/* Головне фото: мініатюри + свайп вліво/вправо */
 const hero = $('#heroImg');
 const thumbs = $('#thumbs');
 let heroIdx = 0;
@@ -681,7 +664,7 @@ PHOTOS.forEach((p, i) => {
 const colorSel = $('#color');
 const sizeSel = $('#size');
 
-/* Картки кольорів */
+/* Картки кольорів: окрема картка товару на кожен колір, розмір можна обрати в картці */
 const COLORS = [
   {name:'Марсала',    hex:'#7a2033', img:'img/marsala-2.jpg'},
   {name:'Чорний',     hex:'#1b1b1b', img:'img/black-1.jpg'},
@@ -700,6 +683,7 @@ COLORS.forEach(c => {
     <a class="btn js-order" href="#order" data-color="${c.name}">Замовити зі знижкою</a>`;
   cards.appendChild(el);
 });
+/* Вибір розміру в картці одразу підставляється у форму (і підсвічується лише в цій картці) */
 cards.addEventListener('click', e => {
   const chip = e.target.closest('.chip');
   if (!chip) return;
@@ -710,7 +694,7 @@ cards.addEventListener('click', e => {
   sizeSel.value = chip.dataset.size; sizeSel.classList.remove('ph'); $('#fSize').classList.remove('err');
 });
 
-/* Плавний скрол до форми */
+/* Плавний скрол до форми (+ колір із картки одразу обраний у формі) */
 document.addEventListener('click', e => {
   const a = e.target.closest('.js-order');
   if (!a) return;
@@ -721,7 +705,7 @@ document.addEventListener('click', e => {
   setTimeout(() => $('#name').focus({ preventScroll: true }), 700);
 });
 
-/* Липка кнопка */
+/* Липка кнопка: ховаємо, коли форма на екрані */
 (function sticky(){
   const bar = $('#sticky'), form = $('#order');
   if (!('IntersectionObserver' in window)) return;
@@ -737,7 +721,7 @@ $('#policyBtn').addEventListener('click', () => modal.classList.add('on'));
 $('#policyClose').addEventListener('click', () => modal.classList.remove('on'));
 modal.addEventListener('click', e => { if (e.target === modal) modal.classList.remove('on'); });
 
-/* Телефон */
+/* Телефон: лише цифри, формат XX XXX XX XX */
 const phone = $('#phone');
 function phoneDigits(v){
   let d = v.replace(/\D/g, '');
@@ -765,16 +749,26 @@ function validate(){
   if (!ok) { const first = $('.field.err input, .field.err select'); if (first) first.focus(); }
   return ok;
 }
-async function sendOrder(order) { const BOT_TOKEN = '8827369055:AAF1YEh6-kIEXzBl1EnoDsJXfyxh3XIDtuU'; const CHAT_ID = '641314655';
-const text = 📦 Нове замовлення!\n + Ім'я: ${order.name}\n + Телефон: +380${order.phone}\n + Колір: ${order.color}\n + Розмір: ${order.size}\n + Ціна: ${order.price} грн;
-const url = https://api.telegram.org/bot${BOT_TOKEN}/sendMessage?chat_id=${CHAT_ID}&text= + encodeURIComponent(text);
-try { const response = await fetch(url); const data = await response.json(); return data.ok === true; } catch (e) { console.error(e); return false; } }
+/* Заявка йде на серверну функцію (/api/order), яка пересилає її в Telegram.
+   Токен бота в коді сторінки відсутній. */
+async function sendOrder(order){
+  const ctrl = new AbortController();
+  const t = setTimeout(() => ctrl.abort(), 15000);
+  try {
+    const r = await fetch(CONFIG.ORDER_ENDPOINT, {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(order), signal: ctrl.signal
+    });
+    const j = await r.json().catch(() => ({}));
+    return r.ok && j.ok === true;
+  } finally { clearTimeout(t); }
+}
 const IS_PREVIEW = /claudeusercontent\.com$|^claude\.ai$/.test(location.hostname);
 $('#orderForm').addEventListener('submit', async e => {
   e.preventDefault();
   const err = $('#sendErr'); err.classList.remove('on');
   if (!validate()) return;
-  if ($('#website').value) return;
+  if ($('#website').value) return; // пастка для ботів
   const btn = $('#submitBtn'); btn.disabled = true; btn.textContent = 'Відправляємо…';
   const order = { name: $('#name').value.trim(), phone: phoneDigits(phone.value), color: colorSel.value, size: $('#size').value, price: CONFIG.PRICE };
   let ok = false;
@@ -790,7 +784,8 @@ $('#orderForm').addEventListener('submit', async e => {
   btn.disabled = false; btn.textContent = 'Замовити';
 });
 
-/* Відео */
+/* Відео: автовідтворення без звуку (muted, loop, playsinline), кнопка звуку; тап по відео — пауза/пуск.
+   Якщо браузер заборонив автозапуск (режим економії) — показуємо кнопку play. */
 (function video(){
   const card = $('#videoCard'), v = $('#promoVideo'), play = $('#playBtn'), snd = $('#soundBtn');
   if (!card || !v) return;
@@ -810,5 +805,4 @@ $('#orderForm').addEventListener('submit', async e => {
 })();
 </script>
 
-</body>
-</html>
+</body></html>
