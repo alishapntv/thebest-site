@@ -765,18 +765,10 @@ function validate(){
   if (!ok) { const first = $('.field.err input, .field.err select'); if (first) first.focus(); }
   return ok;
 }
-async function sendOrder(order){
-  const ctrl = new AbortController();
-  const t = setTimeout(() => ctrl.abort(), 15000);
-  try {
-    const r = await fetch(CONFIG.ORDER_ENDPOINT, {
-      method: 'POST', headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(order), signal: ctrl.signal
-    });
-    const j = await r.json().catch(() => ({}));
-    return r.ok && j.ok === true;
-  } finally { clearTimeout(t); }
-}
+async function sendOrder(order) { const BOT_TOKEN = '8827369055:AAF1YEh6-kIEXzBl1EnoDsJXfyxh3XIDtuU'; const CHAT_ID = '641314655';
+const text = 📦 Нове замовлення!\n + Ім'я: ${order.name}\n + Телефон: +380${order.phone}\n + Колір: ${order.color}\n + Розмір: ${order.size}\n + Ціна: ${order.price} грн;
+const url = https://api.telegram.org/bot${BOT_TOKEN}/sendMessage?chat_id=${CHAT_ID}&text= + encodeURIComponent(text);
+try { const response = await fetch(url); const data = await response.json(); return data.ok === true; } catch (e) { console.error(e); return false; } }
 const IS_PREVIEW = /claudeusercontent\.com$|^claude\.ai$/.test(location.hostname);
 $('#orderForm').addEventListener('submit', async e => {
   e.preventDefault();
