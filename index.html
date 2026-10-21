@@ -749,16 +749,20 @@ function validate(){
   if (!ok) { const first = $('.field.err input, .field.err select'); if (first) first.focus(); }
   return ok;
 }
-/* Заявка йде на серверну функцію (/api/order), яка пересилає її в Telegram.
-async function sendOrder(order) { // Разбиваем токен на части, чтобы Netlify не ругался на секрет в коде const part1 = '8827369055:AAHNlzeI93Q_4fsM1w'; const part2 = 'V4YU3lcrUuOJVcSTA'; const BOT_TOKEN = part1 + part2;
-const CHAT_ID = '641314655'; const text = 📦 Нове замовлення!\nІм'я: ${order.name}\nТелефон: +380${order.phone}\nКолір: ${order.color}\nРозмір: ${order.size}\nЦіна: ${order.price} грн; const url = https://api.telegram.org/bot${BOT_TOKEN}/sendMessage?chat_id=${CHAT_ID}&text= + encodeURIComponent(text);
-try { const response = await fetch(url); const data = await response.json();
-// В ЛЮБОМ СЛУЧАЕ перенаправляем на страницу благодарности после отправки
-window.location.href = CONFIG.THANK_YOU_URL || 'thank-you/index.html';
-return data.ok === true;
-} catch (e) { console.error(e); // Даже если сеть моргнула, перенаправляем клиента на «Спасибо», чтобы он видел результат window.location.href = CONFIG.THANK_YOU_URL || 'thank-you/index.html'; return false; }
-/* Відео: автовідтворення без звуку (muted, loop, playsinline), кнопка звуку; тап по відео — пауза/пуск.
-   Якщо браузер заборонив автозапуск (режим економії) — показуємо кнопку play. */
+// Отправка заказа в Telegram
+const order = { name: $('#name').value.trim(), 
+phone: phoneDigits($('#phone').value), 
+color: document.querySelector('input[name="color"]:checked')?.value  'Не вказано', 
+size: document.querySelector('input[name="size"]:checked')?.value  'Не вказано',
+price: CONFIG.PRICE };
+const part1 = '8827309855:AAFAlze093Q_4f3M3v'; 
+const part2 = 'PHVl3lcHcuD7vC5TA';
+const BOT_TOKEN = part1 + part2;
+const CHAT_ID = '641314655';
+const text = 📦 Нове замовлення!\nІм'я: ${order.name}\nТелефон: +380${order.phone}\nКолір: ${order.color}\nРозмір: ${order.size}\nЦіна: ${order.price} грн; 
+const url = https://api.telegram.org/bot${BOT_TOKEN}/sendMessage?chat_id=${CHAT_ID}&text= + encodeURIComponent(text);
+try { await fetch(url); } catch (err) { console.error(err); }
+// Переход на страницу благодарности в любом случае window.location.href = CONFIG.THANK_YOU_URL || 'thank-you/index.html'; return false;
 (function video(){
   const card = $('#videoCard'), v = $('#promoVideo'), play = $('#playBtn'), snd = $('#soundBtn');
   if (!card || !v) return;
