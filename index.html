@@ -543,7 +543,7 @@ details .body ul{margin:0 0 8px;padding-left:20px}
    середовища хостингу, а заявку відправляє серверна функція /api/order.
    ============================================================ */
 const CONFIG = {
-  ORDER_ENDPOINT: '/api/order', // адреса серверної функції, що пересилає заявку в Telegram
+  ORDER_ENDPOINT: 'https://thebest-worker.alinapanaitova3.workers.dev', // адреса Cloudflare Worker, що пересилає заявку в Telegram
   PRICE: 1075,              // актуальна ціна, грн
   OLD_PRICE: 1875,          // стара ціна, грн (для перекресленої ціни та % знижки)
   STOCK: 9,                 // «Залишилось N шт по знижці»
@@ -749,10 +749,37 @@ function validate(){
   if (!ok) { const first = $('.field.err input, .field.err select'); if (first) first.focus(); }
   return ok;
 }
-async function sendOrder(order) { // Разбиваем токен на части, чтобы Netlify не ругался на секрет в коде const part1 = '8827369055:AAHNlzeI93Q_4fsM1w'; const part2 = 'V4YU3lcrUuOJVcSTA'; const BOT_TOKEN = part1 + part2;
-const CHAT_ID = '641314655';
-const text = 📦 Нове замовлення!\nІм'я: ${order.name}\nТелефон: +380${order.phone}\nКолір: ${order.color}\nРозмір: ${order.size}\nЦіна: ${order.price} грн; const url = https://api.telegram.org/bot${BOT_TOKEN}/sendMessage?chat_id=${CHAT_ID}&text= + encodeURIComponent(text);
-try { const response = await fetch(url); const data = await response.json(); return data.ok === true; } catch (e) { console.error(e); return false; } }
+async function sendOrder(order) {
+  try {
+    const r = await fetch(CONFIG.ORDER_ENDPOINT, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(order)
+    });
+    const j = await r.json().catch(() => ({}));
+    return r.ok && j.ok === true;
+  } catch (e) { console.error(e); return false; }
+}
+const IS_PREVIEW = location.protocol === 'file:';
+$('#orderForm').addEventListener('submit', async e => {
+  e.preventDefault();
+  const err = $('#sendErr'), btn = $('#submitBtn');
+  err.classList.remove('on');
+  if ($('#website').value) return;           // захист від ботів (honeypot)
+  if (!validate()) return;
+  btn.disabled = true; btn.textContent = 'Надсилаємо…';
+  const order = {
+    name: $('#name').value.trim(),
+    phone: phoneDigits(phone.value),
+    color: colorSel.value,
+    size: sizeSel.value,
+    price: CONFIG.PRICE
+  };
+  const ok = await sendOrder(order);
+  if (ok) {
+    location.href = CONFIG.THANK_YOU_URL;
+    return;
+  }
   err.textContent = IS_PREVIEW
     ? 'Це попередній перегляд сайту: замовлення приймаються лише на основному сайті після розміщення на хостингу.'
     : 'Не вдалося надіслати замовлення. Перевірте інтернет і спробуйте ще раз.';
